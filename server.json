@@ -1,0 +1,38 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.honeyb/honeyb",
+  "title": "Honeyb",
+  "description": "AI search visibility for agents: what ChatGPT, Gemini, Claude and 5 more engines say about a brand",
+  "version": "1.0.0",
+  "websiteUrl": "https://www.honeyb.ai/platform/api/mcp",
+  "icons": [
+    {
+      "src": "https://www.honeyb.ai/favicon.png",
+      "mimeType": "image/png",
+      "sizes": ["192x192"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://platform.honeyb.ai/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Your Honeyb API key, sent as a bearer token. Apply for a key at https://www.honeyb.ai/platform/api",
+          "value": "Bearer {honeyb_api_key}",
+          "isRequired": true,
+          "isSecret": true,
+          "variables": {
+            "honeyb_api_key": {
+              "description": "Honeyb API key (starts with hb_live_)",
+              "placeholder": "hb_live_...",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
